@@ -8,6 +8,11 @@
       "type": "node",
       "request": "attach",
       "name": "Launch Program",
+      "port": 9229,
+      "address": "localhost",
+      "sourceMapPathOverrides": {
+         "/usr/app/*": "${workspaceRoot}/*"
+       },
       "skipFiles": [
         "<node_internals>/**"
       ],
