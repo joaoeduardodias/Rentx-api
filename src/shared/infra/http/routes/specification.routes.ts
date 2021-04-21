@@ -1,7 +1,7 @@
 import { Router } from "express";
 
+import { CreateSpacificationController } from "../../../../modules/cars/useCases/createSpacification/CreateSpacificationController";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
-import { CreateSpacificationController } from "../modules/cars/useCases/createSpacification/CreateSpacificationController";
 
 const specificationRoutes = Router();
 
