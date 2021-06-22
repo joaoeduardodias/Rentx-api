@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "ts-node-dev --inspect=0.0.0.0:9229 --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "test": "jest",
+    "test": "jest -i",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "csv-parse": "^4.15.3",
+    "dayjs": "^1.10.5",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
