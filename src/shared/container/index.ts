@@ -1,7 +1,5 @@
 import { container } from "tsyringe";
 
-import "./providers";
-
 import { UsersRepository } from "../../modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { UsersTokenRepository } from "../../modules/accounts/infra/typeorm/repositories/UsersTokenRepository";
 import { IUsersRepository } from "../../modules/accounts/repositories/IUsersRepository";
@@ -16,9 +14,6 @@ import { ICategoriesRepository } from "../../modules/cars/repositories/ICategori
 import { ISpecificationsRepository } from "../../modules/cars/repositories/ISpecificationsRepository";
 import { RentalsRepository } from "../../modules/rentals/infra/typeorm/repositories/RentalsRepository";
 import { IRentalsRepository } from "../../modules/rentals/repositories/IRentalsRepository";
-import { LocalStorageProvider } from "./providers/StorageProvider/implementations/LocalStorageProvider";
-import { S3StorageProvider } from "./providers/StorageProvider/implementations/S3StorageProvider";
-import { IStorageProvider } from "./providers/StorageProvider/IStorageProvider";
 
 container.registerSingleton<ICategoriesRepository>(
    "CategoriesRepository",
@@ -47,14 +42,4 @@ container.registerSingleton<IRentalsRepository>(
 container.registerSingleton<IUsersTokensRepository>(
    "UsersTokenRepository",
    UsersTokenRepository
-);
-
-const diskStorage = {
-   local: LocalStorageProvider,
-   s3: S3StorageProvider,
-};
-
-container.registerSingleton<IStorageProvider>(
-   "StorageProvider",
-   diskStorage[process.env.DISK]
 );
