@@ -12,12 +12,13 @@ export async function ensureAuthenticated(
    request: Request,
    response: Response,
    next: NextFunction
-): Promise<void> {
+) {
    const authHeader = request.headers.authorization;
 
    if (!authHeader) {
       throw new AppError("Token missing", 401);
    }
+
    const [, token] = authHeader.split(" ");
 
    try {
@@ -26,8 +27,9 @@ export async function ensureAuthenticated(
       request.user = {
          id: user_id,
       };
+
       next();
    } catch {
-      throw new AppError("Invalid token !", 401);
+      throw new AppError("Invalid token!", 401);
    }
 }

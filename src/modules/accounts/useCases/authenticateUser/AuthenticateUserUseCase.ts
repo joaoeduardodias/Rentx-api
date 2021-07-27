@@ -12,6 +12,7 @@ interface IRequest {
    email: string;
    password: string;
 }
+
 interface IResponse {
    user: {
       name: string;
@@ -20,13 +21,14 @@ interface IResponse {
    token: string;
    refresh_token: string;
 }
+
 @injectable()
 class AuthenticateUserUseCase {
    constructor(
       @inject("UsersRepository")
       private usersRepository: IUsersRepository,
       @inject("UsersTokenRepository")
-      private usersTokenRepository: IUsersTokensRepository,
+      private usersTokensRepository: IUsersTokensRepository,
       @inject("DayJsDateProvider")
       private dateProvider: IDateProvider
    ) {}
@@ -40,12 +42,15 @@ class AuthenticateUserUseCase {
          expires_in_refresh_token,
          expires_refresh_token_days,
       } = auth;
+
       if (!user) {
-         throw new AppError("Email or password incorrect", 401);
+         throw new AppError("Email or password incorrect!");
       }
+
       const passwordMatch = await compare(password, user.password);
+
       if (!passwordMatch) {
-         throw new AppError("Email or password incorrect", 401);
+         throw new AppError("Email or password incorrect!");
       }
 
       const token = sign({}, secret_token, {
@@ -57,10 +62,12 @@ class AuthenticateUserUseCase {
          subject: user.id,
          expiresIn: expires_in_refresh_token,
       });
+
       const refresh_token_expires_date = this.dateProvider.addDays(
          expires_refresh_token_days
       );
-      await this.usersTokenRepository.create({
+
+      await this.usersTokensRepository.create({
          user_id: user.id,
          refresh_token,
          expires_date: refresh_token_expires_date,
@@ -74,6 +81,7 @@ class AuthenticateUserUseCase {
          },
          refresh_token,
       };
+
       return tokenReturn;
    }
 }
