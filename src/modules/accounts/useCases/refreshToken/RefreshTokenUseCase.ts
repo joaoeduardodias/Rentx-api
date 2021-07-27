@@ -59,7 +59,7 @@ class RefreshTokenUseCase {
          expiresIn: auth.expires_in_token,
       });
       return {
-         token,
+         token: newToken,
          refresh_token,
       };
    }

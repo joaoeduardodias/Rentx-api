@@ -19,7 +19,7 @@ export async function ensureAuthenticated(
       throw new AppError("Token missing", 401);
    }
    const [, token] = authHeader.split(" ");
-   // verifica se um token é valido
+
    try {
       const { sub: user_id } = verify(token, auth.secret_token) as IPayload;
 
