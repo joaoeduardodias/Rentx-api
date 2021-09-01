@@ -1,61 +1,118 @@
-# Cadastro de carro
-**RF**
-Deve ser possível cadastrar um novo carro.
-
-**RN**
-Não deve ser possível cadastrar um carro com uma placa já existente.
-O carro deve ser cadastrado,por padrão, com disponibilidade.
-O usuário responsável pelo cadastro, deve ser um usuário administrador.
-
-# Listagem de carros
-
-**RF**
-Deve ser possível listar todos os carros disponíveis.
-Deve ser possível listar todos os carros disponíveis pelo nome da categoria
-Deve ser possível listar todos os carros disponíveis pelo da marca
-Deve ser possível listar todos os carros disponíveis pelo do carro
-
-**RN**
-O usuário não precisa estar logado no sistema.
-
-# Cadastro de Espicificação no carro
-
-**RF**
-Deve ser possível cadastrar uma especificação para um carro.
-Deve ser possível listar todas as especificações
-Deve ser possível listar todos os carros
+<h1 align="center">
 
 
-**RN**
-Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
-Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
-O usuário responsável pelo cadastro, deve ser um usuário administrador.
+<img src="https://i.imgur.com/oUAKMC5.png">
+<br>
+<br>
+Rentx
+</h1>
+
+<p align="center">Api of a car rental app, back-end developed during NodeJS's ignite training
+</p>
+<br>
+<br>
+<p align="center">
+ <a href="#Technologies">Technologies</a> •
+ <a href="#Get-Started">Get started</a> •
+ <a href="#Documentation"> Documentation </a> •
+ <a href="#Developer">Developer</a>
+</p>
+<br>
+<br>
+
+  ##  🚀  Technologies
+
+  This project was development with the following technologies
+
+<br>
+
+  -   ✅  Typescript
+  -   ✅  NodeJS
+  -   ✅  JWT
+  -   ✅  Swagger
+  -   ✅  AWS
+  -   ✅  Babel
+  -   ✅  DayJS
+  -   ✅  Handlebars
+  -   ✅  Multer
+  -   ✅  Nodemailer
+  -   ✅  Jest and supertest
+  -   ✅  Eslint
+  -   ✅  Prettier
+  -   ✅  Postgre SQL
+  -   ✅  TypeORM
+  -   ✅  Tsyringe
+  -   ✅  Docker
+  -   ✅  Docker-Compose
+
+<br>
+<br>
+
+## 🏁  Get started
+
+### 🚧 To run the project, you must have installed [Docker](https://www.docker.com/) and [Docker-compose](https://docs.docker.com/compose/install/) 🚧
+<br>
+
+### First step is to open your terminal where you want to download the project.
+
+<br>
+
+### To download and initializing the project run the following command.
+
+```bash
+$ git clone https://github.com/joaoeduardodias/Rentx-api.git
+$ cd Rentx-api
+$ docker-compose up -d
+```
+
+### The server will start on port 3333, go to localhost:3333
+
+<br>
+
+### To monitor the project logs, run the following command
+
+```bash
+$ docker logs rentx -f
+```
+
+<br>
+<br>
+
+## 📝 Documentation
+
+<br>
+
+### The documentation for this API is made with Swagger, and is accessible through the following link:
+
+<br>
+
+```
+http://localhost:3333/api-docs
+```
+
+<br>
+<br>
 
 
-# Cadastro de imagens do carro
 
-**RF**
-Deve ser possível cadastrar a imagem do carro.
-Deve ser possível listar todos os carros.
-
-
-**RNF**
-Utilizar o Multer para upload dos arquivos.
-
-
-**RN**
-O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
-O usuário responsável pelo cadastro, deve ser um usuário administrador.
-
-# Aluguel de carro
-
-**RF**
-Deve ser possível cadastrar um aluguel.
+## 👨‍🔧 Developer
+---
+<br>
+<a href="https://www.linkedin.com/in/jo%C3%A3o-dias-465157183/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/49342574?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>João Dias</b></sub></a> <a href="https://www.linkedin.com/in/jo%C3%A3o-dias-465157183/" title="João Dias">&nbsp;&nbsp;🚀</a>
 
 
-**RN**
-O aluguel deve ter duração mínima de 24 horas.
-Não deve ser possível cadastrar um novo  aluguel caso já exista um aberto para o mesmo usuário.
-Não deve ser possível cadastrar um novo  aluguel caso já exista um aberto para o mesmo carro.
+Feito com ❤️ por João Dias 👋🏽 Entre em contato!
+
+ [![Linkedin Badge](https://img.shields.io/badge/-João_Dias-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jo%C3%A3o-dias-465157183/)](https://www.linkedin.com/in/jo%C3%A3o-dias-465157183/)
+[![Gmail Badge](https://img.shields.io/badge/-joaoeduardodias123@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:joaoeduardodias123@gmail.com)](mailto:joaoeduardodias123@gmail.com)
+<br>
+<br>
+
+<h3 align="center">
+	🚧  Rentx  🚀 Em construção...  🚧
+</h3>
 
 
